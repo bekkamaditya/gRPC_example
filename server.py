@@ -16,7 +16,6 @@ class ApplicationServicer( app_pb2_grpc.ApplicationServicer ):
 
     def GetResponse( self,request,context ):
         response = getResponse(request)
-        #print( response )
 	return response
 
     def GetStreamedResponse(self, request, context):
@@ -27,7 +26,6 @@ class ApplicationServicer( app_pb2_grpc.ApplicationServicer ):
 	name = "" 
 	for request in request_iterator	:
 	    name = name + request.name + '-' 
-	#print name
 	return app_pb2.AppResponse(email='{}@nutanix.com'.format(name)) 
 
     def MultipleStream(self,request_iterator,context):

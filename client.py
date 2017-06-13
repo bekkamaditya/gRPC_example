@@ -25,7 +25,6 @@ def getResponseIterator(stub):
 	    break
 	request = app_pb2.AppRequest()
 	request.name = name
-	#yield app_pb2.AppRequest(name)
 	yield request
 
 def getResponse1(stub):

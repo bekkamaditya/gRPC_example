@@ -1,9 +1,12 @@
 syntax="proto3";
 service Application{ 
-
+    //Single request - single response
     rpc GetResponse( AppRequest ) returns ( AppResponse ){}
+    //Single request - multiple response
     rpc GetStreamedResponse( AppRequest ) returns (stream AppResponse){}   
+    //Multiple requests - single response
     rpc GetResponse1( stream AppRequest ) returns (AppResponse){}
+    //Multiple requests - mulitple responses
     rpc MultipleStream( stream AppRequest ) returns (stream AppResponse){}
 }
 
