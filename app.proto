@@ -1,0 +1,16 @@
+syntax="proto3";
+service Application{ 
+
+    rpc GetResponse( AppRequest ) returns ( AppResponse ){}
+    rpc GetStreamedResponse( AppRequest ) returns (stream AppResponse){}   
+    rpc GetResponse1( stream AppRequest ) returns (AppResponse){}
+    rpc MultipleStream( stream AppRequest ) returns (stream AppResponse){}
+}
+
+message AppRequest{
+    string name = 1;
+}
+
+message AppResponse{
+    string email = 1;
+}
