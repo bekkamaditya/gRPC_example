@@ -42,8 +42,8 @@ def run():
     channel = grpc.insecure_channel('localhost: 50051') 
     stub = app_pb2_grpc.ApplicationStub(channel)
     getStreamedResponse( stub )  
-    getResponse1(stub) 
-    multipleExchange(stub)
+    #getResponse1(stub) 
+    #multipleExchange(stub)
 
 if __name__ == '__main__' :
     run()

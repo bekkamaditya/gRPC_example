@@ -19,6 +19,7 @@ class ApplicationServicer( app_pb2_grpc.ApplicationServicer ):
 	return response
 
     def GetStreamedResponse(self, request, context):
+	print "Entered streamed response"
 	for i in range(10) :
 	    yield app_pb2.AppResponse(email='{}-{}@nutanix.com'.format(request.name,i))		
 
